@@ -4223,3 +4223,531 @@ Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:461)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
 	... 61 more
+2021-03-04 19:53:47 jdbc[16]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:245)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:186)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:121)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477)
+	at com.zaxxer.hikari.pool.HikariPool.access$100(HikariPool.java:71)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:725)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:711)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 18 more
+2021-03-04 21:22:41 jdbc[47]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:245)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:186)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:121)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477)
+	at com.zaxxer.hikari.pool.HikariPool.access$100(HikariPool.java:71)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:725)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:711)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 18 more
+2021-03-05 00:46:21 database: wrong user or password; user: "GOJO"
+org.h2.message.DbException: Wrong user name or password [28000-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.engine.Engine.openSession(Engine.java:131)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.engine.Engine.createSession(Engine.java:29)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:309)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:289)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.login(WebApp.java:1008)
+	at org.h2.server.web.WebApp.process(WebApp.java:223)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:173)
+	at org.h2.server.web.WebServlet.doGet(WebServlet.java:129)
+	at org.h2.server.web.WebServlet.doPost(WebServlet.java:166)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:204)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:461)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 61 more
+2021-03-05 20:13:41 jdbc[65]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:245)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:186)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:121)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:358)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:206)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:477)
+	at com.zaxxer.hikari.pool.HikariPool.access$100(HikariPool.java:71)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:725)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:711)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:622)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 18 more
+2021-03-06 20:21:27 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DROP TABLE IF EXISTS OPTION CASCADE 
+
+    
+    DROP[*] TABLE IF EXISTS POLL CASCADE 
+
+    
+    DROP TABLE IF EXISTS POLL_OPTIONS CASCADE 
+
+    
+    DROP TABLE IF EXISTS POLL_VOTED_USERS CASCADE 
+
+    
+    DROP TABLE IF EXISTS USER CASCADE 
+
+    
+    DROP TABLE IF EXISTS USER_ROLES CASCADE 
+
+    
+    CREATE TABLE OPTION (
+       ID BIGINT GENERATED BY DEFAULT AS IDENTITY,
+        RATE BIGINT NOT NULL,
+        VALUE VARCHAR(255),
+        PRIMARY KEY (ID)
+    )
+
+    
+    CREATE TABLE POLL (
+       ID BIGINT GENERATED BY DEFAULT AS IDENTITY,
+        POLL_TITLE VARCHAR(255),
+        AUTHOR_ID BIGINT,
+        PRIMARY KEY (ID)
+    )
+
+    
+    CREATE TABLE POLL_OPTIONS (
+       POLL_ID BIGINT NOT NULL,
+        OPTIONS_ID BIGINT NOT NULL
+    )
+
+    
+    CREATE TABLE POLL_VOTED_USERS (
+       POLL_ID BIGINT NOT NULL,
+        VOTED_USERS_ID BIGINT NOT NULL
+    )
+
+    
+    CREATE TABLE USER (
+       ID BIGINT GENERATED BY DEFAULT AS IDENTITY,
+        EMAIL VARCHAR(255),
+        FIRSTNAME VARCHAR(255),
+        LASTNAME VARCHAR(255),
+        PASSWORD VARCHAR(255),
+        PHONE VARCHAR(255),
+        USERNAME VARCHAR(255),
+        PRIMARY KEY (ID)
+    )
+
+    
+    CREATE TABLE USER_ROLES (
+       USER_ID BIGINT NOT NULL,
+        ROLES VARCHAR(255)
+    )
+
+    
+    ALTER TABLE POLL_OPTIONS 
+       ADD CONSTRAINT UK_K0LSS03XUY4CXNGQECPP55OWA UNIQUE (OPTIONS_ID)
+
+    
+    ALTER TABLE POLL_VOTED_USERS 
+       ADD CONSTRAINT UK_C2BEM200Q3FMC05O0QY3YGDWO UNIQUE (VOTED_USERS_ID)
+
+    
+    ALTER TABLE POLL 
+       ADD CONSTRAINT FK9UO3V7AKUWTKMP3PDLPIIKBE 
+       FOREIGN KEY (AUTHOR_ID) 
+       REFERENCES USER
+
+    
+    ALTER TABLE POLL_OPTIONS 
+       ADD CONSTRAINT FK1YXVKOBWVUC9H7DWCNDR6OFDI 
+       FOREIGN KEY (OPTIONS_ID) 
+       REFERENCES OPTION
+
+    
+    ALTER TABLE POLL_OPTIONS 
+       ADD CONSTRAINT FKQFYA5FG6LFP4UX4O75G5YUPTV 
+       FOREIGN KEY (POLL_ID) 
+       REFERENCES POLL
+
+    
+    ALTER TABLE POLL_VOTED_USERS 
+       ADD CONSTRAINT FK3LYC3A4S3JYYH1NFPRPSNT5BP 
+       FOREIGN KEY (VOTED_USERS_ID) 
+       REFERENCES USER
+
+    
+    ALTER TABLE POLL_VOTED_USERS 
+       ADD CONSTRAINT FKNNXIJ2DNCLRM50A15VCOHHGRF 
+       FOREIGN KEY (POLL_ID) 
+       REFERENCES POLL
+
+    
+    ALTER TABLE USER_ROLES 
+       ADD CONSTRAINT FK55ITPPKW3I07DO3H7QOCLQD4K 
+       FOREIGN KEY (USER_ID) 
+       REFERENCES USER"; SQL statement:
+drop table if exists option CASCADE 
+
+    
+    drop table if exists poll CASCADE 
+
+    
+    drop table if exists poll_options CASCADE 
+
+    
+    drop table if exists poll_voted_users CASCADE 
+
+    
+    drop table if exists user CASCADE 
+
+    
+    drop table if exists user_roles CASCADE 
+
+    
+    create table option (
+       id bigint generated by default as identity,
+        rate bigint not null,
+        value varchar(255),
+        primary key (id)
+    )
+
+    
+    create table poll (
+       id bigint generated by default as identity,
+        poll_title varchar(255),
+        author_id bigint,
+        primary key (id)
+    )
+
+    
+    create table poll_options (
+       poll_id bigint not null,
+        options_id bigint not null
+    )
+
+    
+    create table poll_voted_users (
+       poll_id bigint not null,
+        voted_users_id bigint not null
+    )
+
+    
+    create table user (
+       id bigint generated by default as identity,
+        email varchar(255),
+        firstname varchar(255),
+        lastname varchar(255),
+        password varchar(255),
+        phone varchar(255),
+        username varchar(255),
+        primary key (id)
+    )
+
+    
+    create table user_roles (
+       user_id bigint not null,
+        roles varchar(255)
+    )
+
+    
+    alter table poll_options 
+       add constraint UK_k0lss03xuy4cxngqecpp55owa unique (options_id)
+
+    
+    alter table poll_voted_users 
+       add constraint UK_c2bem200q3fmc05o0qy3ygdwo unique (voted_users_id)
+
+    
+    alter table poll 
+       add constraint FK9uo3v7akuwtkmp3pdlpiikbe 
+       foreign key (author_id) 
+       references user
+
+    
+    alter table poll_options 
+       add constraint FK1yxvkobwvuc9h7dwcndr6ofdi 
+       foreign key (options_id) 
+       references option
+
+    
+    alter table poll_options 
+       add constraint FKqfya5fg6lfp4ux4o75g5yuptv 
+       foreign key (poll_id) 
+       references poll
+
+    
+    alter table poll_voted_users 
+       add constraint FK3lyc3a4s3jyyh1nfprpsnt5bp 
+       foreign key (voted_users_id) 
+       references user
+
+    
+    alter table poll_voted_users 
+       add constraint FKnnxij2dnclrm50a15vcohhgrf 
+       foreign key (poll_id) 
+       references poll
+
+    
+    alter table user_roles 
+       add constraint FK55itppkw3i07do3h7qoclqd4k 
+       foreign key (user_id) 
+       references user [42000-200]
+2021-03-06 20:21:40 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DROP TABLE IF EXISTS OPTION CASCADE 
+
+    
+    DROP[*] TABLE IF EXISTS POLL CASCADE 
+
+    
+    DROP TABLE IF EXISTS POLL_OPTIONS CASCADE 
+
+    
+    DROP TABLE IF EXISTS POLL_VOTED_USERS CASCADE 
+
+    
+    DROP TABLE IF EXISTS USER CASCADE 
+
+    
+    DROP TABLE IF EXISTS USER_ROLES CASCADE"; SQL statement:
+drop table if exists option CASCADE 
+
+    
+    drop table if exists poll CASCADE 
+
+    
+    drop table if exists poll_options CASCADE 
+
+    
+    drop table if exists poll_voted_users CASCADE 
+
+    
+    drop table if exists user CASCADE 
+
+    
+    drop table if exists user_roles CASCADE [42000-200]
+2021-03-06 20:22:40 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE POLL (
+       ID BIGINT GENERATED BY DEFAULT AS IDENTITY,
+        POLL_TITLE VARCHAR(255),
+        AUTHOR_ID BIGINT,
+        PRIMARY KEY (ID)
+    )
+
+    
+    CREATE[*] TABLE POLL_OPTIONS (
+       POLL_ID BIGINT NOT NULL,
+        OPTIONS_ID BIGINT NOT NULL
+    )"; SQL statement:
+create table poll (
+       id bigint generated by default as identity,
+        poll_title varchar(255),
+        author_id bigint,
+        primary key (id)
+    )
+
+    
+    create table poll_options (
+       poll_id bigint not null,
+        options_id bigint not null
+    ) [42000-200]
+2021-03-06 20:23:15 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "ALTER TABLE POLL_OPTIONS 
+       ADD CONSTRAINT UK_K0LSS03XUY4CXNGQECPP55OWA UNIQUE (OPTIONS_ID)
+
+    
+    ALTER[*] TABLE POLL_VOTED_USERS 
+       ADD CONSTRAINT UK_C2BEM200Q3FMC05O0QY3YGDWO UNIQUE (VOTED_USERS_ID)
+
+    
+    ALTER TABLE POLL 
+       ADD CONSTRAINT FK9UO3V7AKUWTKMP3PDLPIIKBE 
+       FOREIGN KEY (AUTHOR_ID) 
+       REFERENCES USER
+
+    
+    ALTER TABLE POLL_OPTIONS 
+       ADD CONSTRAINT FK1YXVKOBWVUC9H7DWCNDR6OFDI 
+       FOREIGN KEY (OPTIONS_ID) 
+       REFERENCES OPTION
+
+    
+    ALTER TABLE POLL_OPTIONS 
+       ADD CONSTRAINT FKQFYA5FG6LFP4UX4O75G5YUPTV 
+       FOREIGN KEY (POLL_ID) 
+       REFERENCES POLL
+
+    
+    ALTER TABLE POLL_VOTED_USERS 
+       ADD CONSTRAINT FK3LYC3A4S3JYYH1NFPRPSNT5BP 
+       FOREIGN KEY (VOTED_USERS_ID) 
+       REFERENCES USER
+
+    
+    ALTER TABLE POLL_VOTED_USERS 
+       ADD CONSTRAINT FKNNXIJ2DNCLRM50A15VCOHHGRF 
+       FOREIGN KEY (POLL_ID) 
+       REFERENCES POLL
+
+    
+    ALTER TABLE USER_ROLES 
+       ADD CONSTRAINT FK55ITPPKW3I07DO3H7QOCLQD4K 
+       FOREIGN KEY (USER_ID) 
+       REFERENCES USER"; SQL statement:
+alter table poll_options 
+       add constraint UK_k0lss03xuy4cxngqecpp55owa unique (options_id)
+
+    
+    alter table poll_voted_users 
+       add constraint UK_c2bem200q3fmc05o0qy3ygdwo unique (voted_users_id)
+
+    
+    alter table poll 
+       add constraint FK9uo3v7akuwtkmp3pdlpiikbe 
+       foreign key (author_id) 
+       references user
+
+    
+    alter table poll_options 
+       add constraint FK1yxvkobwvuc9h7dwcndr6ofdi 
+       foreign key (options_id) 
+       references option
+
+    
+    alter table poll_options 
+       add constraint FKqfya5fg6lfp4ux4o75g5yuptv 
+       foreign key (poll_id) 
+       references poll
+
+    
+    alter table poll_voted_users 
+       add constraint FK3lyc3a4s3jyyh1nfprpsnt5bp 
+       foreign key (voted_users_id) 
+       references user
+
+    
+    alter table poll_voted_users 
+       add constraint FKnnxij2dnclrm50a15vcohhgrf 
+       foreign key (poll_id) 
+       references poll
+
+    
+    alter table user_roles 
+       add constraint FK55itppkw3i07do3h7qoclqd4k 
+       foreign key (user_id) 
+       references user [42000-200]
+2021-03-06 23:13:57 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DROP TABLE IF EXISTS OPTION CASCADE 
+
+    
+    DROP[*] TABLE IF EXISTS POLL CASCADE 
+
+    
+    DROP TABLE IF EXISTS POLL_OPTIONS CASCADE 
+
+    
+    DROP TABLE IF EXISTS POLL_VOTED_USERS CASCADE 
+
+    
+    DROP TABLE IF EXISTS USER CASCADE 
+
+    
+    DROP TABLE IF EXISTS USER_ROLES CASCADE"; SQL statement:
+drop table if exists option CASCADE 
+
+    
+    drop table if exists poll CASCADE 
+
+    
+    drop table if exists poll_options CASCADE 
+
+    
+    drop table if exists poll_voted_users CASCADE 
+
+    
+    drop table if exists user CASCADE 
+
+    
+    drop table if exists user_roles CASCADE [42000-200]

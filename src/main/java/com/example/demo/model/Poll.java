@@ -3,6 +3,7 @@ package com.example.demo.model;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -17,6 +18,8 @@ public class Poll {
     private List<Option> options;
     @OneToOne
     private User author;
+    @ManyToMany(cascade = {CascadeType.ALL})
+    private List<User> votedUsers;
 
     public Poll(String pollTitle, List<Option> options, User author) {
         this.id = id;
@@ -26,7 +29,6 @@ public class Poll {
     }
 
     public Poll() {
-
     }
 
     public long getId() {
@@ -59,6 +61,22 @@ public class Poll {
 
     public void setOwner(User author) {
         this.author = author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
+    }
+
+    public void setVotedUsers(List<User> votedUsers) {
+        this.votedUsers = votedUsers;
+    }
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public List<User> getVotedUsers() {
+        return votedUsers;
     }
 
     @Override
