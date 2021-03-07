@@ -1,7 +1,10 @@
 package com.example.demo.model;
 
 import com.sun.istack.NotNull;
+import com.sun.istack.Nullable;
+
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -17,8 +20,7 @@ public class User{
     private String lastname;
     private String email;
     private String phone;
-    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
-    @Enumerated(EnumType.STRING)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Role> roles;
 
     public User(String firstname, String lastname) {
@@ -118,6 +120,7 @@ public class User{
         return "User{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", email='" + email + '\'' +

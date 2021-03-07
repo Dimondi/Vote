@@ -12,4 +12,9 @@
 INSERT INTO user (firstname, lastname, username, password) VALUES('Satoru', 'Gojou', 'gojo','$2y$10$1C4pSSOqwJ21V4xxjK3fVOFFGRUDlfP4u6lJPjO/zplK6S5L/unYm');
 INSERT INTO user (firstname, lastname,username, password) VALUES('Dimash', 'Admin','admin','$2y$12$kIzAbHJGwqP1zDf7n35t5OG2Ywv9bTxWq5o944um8dysKAsytGwKi');
 
+INSERT INTO role (name) VALUES ('USER');
+INSERT INTO role (name) VALUES ('ADMIN');
+
+INSERT INTO user_roles VALUES (1, 1);
+INSERT INTO user_roles VALUES (2, 2);
 

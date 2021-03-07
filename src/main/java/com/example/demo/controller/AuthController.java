@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.*;
+import com.example.demo.repository.IRoleRepository;
 import com.example.demo.repository.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -23,6 +24,8 @@ public class AuthController {
     @Autowired
     private IUserRepository userRepository;
 
+    @Autowired
+    private IRoleRepository roleRepository;
 
     @GetMapping("/login")
     public String loginPage(){
@@ -60,7 +63,7 @@ public class AuthController {
             model.addAttribute("error","Invalid format of username or password!");
             return "auth";
         }
-        userForm.setRoles(Collections.singleton(Role.USER));
+        userForm.setRoles(Collections.singleton(roleRepository.findRoleByName("USER")));
         model.addAttribute("success","You have been registered!");
         userRepository.save(userForm);
         return "auth";
