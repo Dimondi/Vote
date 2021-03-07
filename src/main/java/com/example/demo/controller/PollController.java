@@ -14,9 +14,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 @Controller
 public class PollController {
+
+    ExecutorService threadExecutor = Executors.newCachedThreadPool();
+
     @Autowired
     private IUserRepository userRepository;
 
@@ -39,18 +46,11 @@ public class PollController {
     }
 
     @GetMapping("/poll/{id}")
-    public String pollPage(@PathVariable("id") long id, Model model){
+    public String pollPage(@PathVariable("id") long id, Model model) throws ExecutionException, InterruptedException {
         Poll poll = pollRepository.findPollById(id);
-        long overallRate = 0;
-        for(int i = 0; i < poll.getOptions().size(); i++){
-            overallRate = overallRate + poll.getOptions().get(i).getRate();
-        }
-        for(int i = 0; i < poll.getOptions().size(); i++){
-            long rate = poll.getOptions().get(i).getRate();
-            float percentRate = (float) (((float) rate / (float)overallRate) * 100.0);
-            poll.getOptions().get(i).setRate((long) percentRate);
-        }
-        model.addAttribute("poll",poll);
+        Future<Poll> futureCall = threadExecutor.submit(new PollOptionRateSetter(poll));
+        Poll result =  futureCall.get();
+        model.addAttribute("poll",result);
         return "poll";
     }
 
