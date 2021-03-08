@@ -21,17 +21,17 @@
             <div class="panel-body">
                 <ul class="list-group">
                     <c:forEach items="${poll.options}" var="option">
-                    <li class="list-group-item">
-                        <div class="checkbox">
-                            <label>
-                                <input type="radio" name="option" value="${option.id}">
-                                ${option.value}
-                            </label>
-                            <div style="display: none;" class="rate" class="progress">
-                                <div class="progress-bar bg-success" role="progressbar" style="width: ${option.rate}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">${option.rate}%</div>
+                        <li class="list-group-item">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="radio" name="option" value="${option.id}">
+                                        ${option.value}
+                                </label>
+                                <div style="display: none;" class="rate" class="progress">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: ${option.rate}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">${option.rate}%</div>
+                                </div>
                             </div>
-                        </div>
-                    </li>
+                        </li>
                     </c:forEach>
                 </ul>
             </div>
@@ -43,6 +43,7 @@
     </div>
 </div>
 <div class='ui' style="display: none">
+
     <div class='title'>
         <h1>
             Statistic for poll
@@ -50,7 +51,9 @@
         <br><br>
 
     </div>
-    <center>
+
+    <div class="container" style="display: flex;">
+
         <div class='ui_box'>
 
             <div class='ui_box__inner'>
@@ -68,7 +71,46 @@
             </div>
 
         </div>
-    </center>
+
+        <div class='ui_box'>
+
+            <div class='ui_box__inner'>
+                <h2>
+                    Male Rate
+                </h2>
+
+                <div class='stat'>
+                    <span>${male}%</span>
+                </div>
+                <div class='progress' >
+                    <div class='progress_bar' style="width:${male}%"></div>
+                </div>
+                <p>Percentage of voted males</p>
+            </div>
+
+        </div>
+
+        <div class='ui_box'>
+
+            <div class='ui_box__inner'>
+                <h2>
+                    Female Rate
+                </h2>
+
+                <div class='stat'>
+                    <span>${female}%</span>
+                </div>
+                <div class='progress' >
+                    <div class='progress_bar' style="width:${female}%"></div>
+                </div>
+                <p>Percentage of voted females</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
 </div>
 <script src="../js/poll_js.js"></script>
 </body>

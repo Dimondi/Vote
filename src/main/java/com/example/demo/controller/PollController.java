@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -49,14 +50,18 @@ public class PollController {
     @GetMapping("/poll/{id}")
     public String pollPage(@PathVariable("id") long id, Model model) throws ExecutionException, InterruptedException {
         Poll poll = pollRepository.findPollById(id);
-        List<User> users =userRepository.findAll();
+        List<User> users = userRepository.findAll();
+        List<User> votedUsers = poll.getVotedUsers();
         Future<Poll> futureCall = threadExecutor.submit(new PollOptionRateSetter(poll));
         Poll result =  futureCall.get();
         int x = (int) (((float)poll.getVotedUsers().size()/(float)users.size())*100);
+        GenderStatistic genderStatistic = new GenderStatistic(votedUsers);
+        Map<String,Integer> rate = genderStatistic.getRate();
+        model.addAttribute("male",String.valueOf(rate.get("male")));
+        model.addAttribute("female",String.valueOf(rate.get("female")));
         model.addAttribute("statistics",String.valueOf(x));
         model.addAttribute("poll",result);
         return "poll";
-
     }
 
     @GetMapping("/editPage/{id}")

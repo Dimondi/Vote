@@ -7,7 +7,9 @@ public class UsernamePasswordChecker implements Callable<Boolean> {
     private String password;
 
     public UsernamePasswordChecker(String username, String password) {
-        this.username = username;
+        if(username==null){
+            this.username = "validatable";
+        }else this.username = username;
         this.password = password;
     }
 
