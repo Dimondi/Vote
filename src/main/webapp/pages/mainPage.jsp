@@ -11,6 +11,7 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
+<input style="display: none" type="text" id="isAdmin" value="${roles[0]}">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#"></a>
@@ -20,13 +21,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-md-auto gap-2">
                 <li class="nav-item rounded">
-                    <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-house-fill me-2"></i>Home</a>
+                    <a class="nav-link active" aria-current="page" href="/mainPage"><i class="bi bi-house-fill me-2"></i>Home</a>
                 </li>
                 <li class="nav-item rounded">
                     <a class="nav-link" href="/writePoll"><i class="bi bi-people-fill me-2"></i>Write post</a>
                 </li>
-                <li class="nav-item rounded">
-                    <a class="nav-link" href="#"><i class="bi bi-telephone-fill me-2"></i>Contact</a>
+                <li class="nav-item dropdown rounded" >
+                    <a id="popular_btn" class="nav-link" href="#"><i class="bi bi-telephone-fill me-2"></i>Popular Polls</a>
+                </li>
+                <li class="nav-item dropdown rounded" >
+                    <a id="latest_btn" class="nav-link" href="#"><i class="bi bi-telephone-fill me-2"></i>Latest Polls</a>
                 </li>
                 <li class="nav-item dropdown rounded">
                     <a class="nav-link" href="/logout"><i class="bi bi-telephone-fill me-2"></i>Logout</a>
@@ -36,32 +40,9 @@
     </div>
 </nav>
 <div class="vh-100 d-flex justify-content-center align-items-center">
-    <div id="content" class="container">
-    </div>
-    <div class="none" class="position-fixed">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">
-                    <span class="glyphicon glyphicon-hand-right"></span>Where do you get your news?</h3>
-            </div>
-            <div class="panel-body">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" value="">
-                                Internet
-                            </label>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="panel-footer text-center">
-                <button type="button" class="btn btn-primary btn-block btn-sm">
-                    Vote</button>
-                <a href="#" class="small">View Result</a></div>
-        </div>
-    </div>
+    <div id="latest" class="container" style="display:none;"></div>
+    <div id="popular" class="container" style="display:none;" ></div>
+    <div id="content" class="container"></div>
 </div>
     <script src="../js/mainPage_js.js"></script>
 </body>

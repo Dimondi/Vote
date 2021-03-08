@@ -20,12 +20,16 @@ public class HomeController {
 	private IUserRepository userRepository;
 
 	@GetMapping("/mainPage")
-	public String mainPage(){
+	public String mainPage(Model model,Authentication authentication){
+		UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
+		model.addAttribute("roles",userPrincipal.getAuthorities());
 		return "mainPage";
 	}
 
 	@GetMapping("/")
-	public String page(){
+	public String page(Model model,Authentication authentication){
+		UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
+		model.addAttribute("roles",userPrincipal.getAuthorities());
 		return "mainPage";
 	}
 

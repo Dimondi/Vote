@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -52,6 +53,44 @@ public class PollController {
         Poll result =  futureCall.get();
         model.addAttribute("poll",result);
         return "poll";
+    }
+
+    @GetMapping("/editPage/{id}")
+    public String editPage(@PathVariable("id") long id, Model model) throws ExecutionException, InterruptedException {
+        Poll poll = pollRepository.findPollById(id);
+        Future<Poll> futureCall = threadExecutor.submit(new PollOptionRateSetter(poll));
+        Poll result =  futureCall.get();
+        model.addAttribute("poll",result);
+        return "editPoll";
+    }
+
+    @GetMapping("/delete/{id}")
+    public ModelAndView deletePoll(@PathVariable("id") long id) throws ExecutionException, InterruptedException {
+        Poll poll = pollRepository.findPollById(id);
+        poll.setVotedUsers(null);
+        poll.setAuthor(null);
+        pollRepository.delete(poll);
+        return new ModelAndView("redirect:/mainPage");
+    }
+
+
+    @GetMapping("/edit/{id}")
+    @ResponseBody
+    public String edit(@PathVariable("id") long id,
+                       @RequestParam(name = "title") String title,
+                       @RequestParam(name = "optionList") List<String> optionList,
+                        Model model) throws ExecutionException, InterruptedException {
+        System.out.println(optionList + " " + title);
+        Poll poll = pollRepository.findPollById(id);
+        poll.setPollTitle(title);
+        if(title!=null && !title.equals("")) {
+            poll.setOptions(DefaultOptionSetter.getDefaultOption(optionList));
+            poll = pollRepository.save(poll);
+            if(poll!=null) {
+                return "Edited";
+            }
+        }
+        return "Invalid input";
     }
 
     @GetMapping("/polls")
