@@ -36,7 +36,7 @@
             </button>
         </div>
         <div class="panel-footer text-center">
-            <button type="button" id="createPoll" class="btn btn-primary btn-block btn-sm">
+            <button type="button" id="createPoll" class="btn btn-success btn-block btn-sm">
                 Create poll</button>
             <a href="#" id="clear" class="small">Clear</a></div>
     </div>

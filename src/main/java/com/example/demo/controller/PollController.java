@@ -49,10 +49,14 @@ public class PollController {
     @GetMapping("/poll/{id}")
     public String pollPage(@PathVariable("id") long id, Model model) throws ExecutionException, InterruptedException {
         Poll poll = pollRepository.findPollById(id);
+        List<User> users =userRepository.findAll();
         Future<Poll> futureCall = threadExecutor.submit(new PollOptionRateSetter(poll));
         Poll result =  futureCall.get();
+        int x = (int) (((float)poll.getVotedUsers().size()/(float)users.size())*100);
+        model.addAttribute("statistics",String.valueOf(x));
         model.addAttribute("poll",result);
         return "poll";
+
     }
 
     @GetMapping("/editPage/{id}")

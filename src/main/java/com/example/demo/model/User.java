@@ -19,6 +19,7 @@ public class User{
     private String firstname;
     private String lastname;
     private String email;
+    private String gender;
     private String phone;
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Role> roles;
@@ -49,6 +50,14 @@ public class User{
         this.email = email;
         this.phone = phone;
         this.roles = roles;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public Long getId() {

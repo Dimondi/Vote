@@ -1,9 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.Poll;
-import com.example.demo.repository.IOptionRepository;
 import com.example.demo.repository.IPollRepository;
-import com.example.demo.repository.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

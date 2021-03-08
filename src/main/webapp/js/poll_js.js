@@ -23,6 +23,7 @@ $(document).ready(function() {
 
     $("#view").click(function (){
         $('.rate').css('display','flex');
+        $('.ui').css('display','block');
     })
 
 });

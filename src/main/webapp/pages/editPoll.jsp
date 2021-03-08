@@ -34,7 +34,7 @@
                 </ul>
             </div>
             <div class="panel-footer text-center">
-                <button type="button" id="edit" class="btn btn-primary btn-block btn-sm">
+                <button type="button" id="edit" class="btn btn-success btn-block btn-sm">
                     Edit</button>
         </div>
     </div>

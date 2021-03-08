@@ -28,7 +28,7 @@
                                 ${option.value}
                             </label>
                             <div style="display: none;" class="rate" class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: ${option.rate}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">${option.rate}%</div>
+                                <div class="progress-bar bg-success" role="progressbar" style="width: ${option.rate}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">${option.rate}%</div>
                             </div>
                         </div>
                     </li>
@@ -36,11 +36,39 @@
                 </ul>
             </div>
             <div class="panel-footer text-center">
-                <button type="button" id="vote" class="btn btn-primary btn-block btn-sm">
+                <button type="button" id="vote" class="btn btn-success btn-block btn-sm">
                     Vote</button>
                 <a href="#" id="view" class="small">View Result</a></div>
         </div>
     </div>
+</div>
+<div class='ui' style="display: none">
+    <div class='title'>
+        <h1>
+            Statistic for poll
+        </h1>
+        <br><br>
+
+    </div>
+    <center>
+        <div class='ui_box'>
+
+            <div class='ui_box__inner'>
+                <h2>
+                    Vote Rate
+                </h2>
+
+                <div class='stat'>
+                    <span>${statistics}%</span>
+                </div>
+                <div class='progress' >
+                    <div class='progress_bar' style="width:${statistics}%"></div>
+                </div>
+                <p>Percentage of users who voted in relation to all users</p>
+            </div>
+
+        </div>
+    </center>
 </div>
 <script src="../js/poll_js.js"></script>
 </body>

@@ -20,9 +20,9 @@ $(document).ready(function() {
                 '        <h5 class="card-title"><strong>Author:</strong> ' + obj.author.firstname + ' ' + obj.author.lastname + '</h5>\n' +
                 '        <p class="card-text"><strong>Title:</strong> ' + obj.pollTitle +
                 '         <strong>Voted:</strong> '+ obj.votedUsers.length +'</p>\n' +
-                '        <div style="display: none;" class="row edit"><a class="btn btn-success edit" style="width: 50%;text-align: center;" href="/editPage/'+ obj.id +'" role="button">Edit</a>\n' +
+                '        <div style="display: none;" class="row edit"><a class="btn btn-secondary edit" style="width: 50%;text-align: center;" href="/editPage/'+ obj.id +'" role="button">Edit</a>\n' +
                 '        <a class="btn btn-danger edit" style="width: 50%;text-align: center;" href="/delete/'+ obj.id +'" role="button">Delete</a></div>\n' +
-                '        <div class="row"><a class="btn btn-primary" style="width: 100%;" href="/poll/'+ obj.id +'" role="button">Vote</a></div>\n' +
+                '        <div class="row"><a class="btn btn-success" style="width: 100%;" href="/poll/'+ obj.id +'" role="button">Vote</a></div>\n' +
                 '      </div>\n' +
                 '    </div>\n' +
                 '  </div>');
@@ -55,9 +55,9 @@ $(document).ready(function() {
                 '        <h5 class="card-title"><strong>Author:</strong> ' + obj.author.firstname + ' ' + obj.author.lastname + '</h5>\n' +
                 '        <p class="card-text"><strong>Title:</strong> ' + obj.pollTitle +
                 '         <strong>Voted:</strong> '+ obj.votedUsers.length +'</p>\n' +
-                '        <div style="display: none;" class="row edit"><a class="btn btn-success edit" style="width: 50%;text-align: center;" href="/editPage/'+ obj.id +'" role="button">Edit</a>\n' +
+                '        <div style="display: none;" class="row edit"><a class="btn btn-secondary edit" style="width: 50%;text-align: center;" href="/editPage/'+ obj.id +'" role="button">Edit</a>\n' +
                 '        <a class="btn btn-danger edit" style="width: 50%;text-align: center;" href="/delete/'+ obj.id +'" role="button">Delete</a></div>\n' +
-                '        <div class="row"><a class="btn btn-primary" style="width: 100%;" href="/poll/'+ obj.id +'" role="button">Vote</a></div>\n' +
+                '        <div class="row"><a class="btn btn-success" style="width: 100%;" href="/poll/'+ obj.id +'" role="button">Vote</a></div>\n' +
                 '      </div>\n' +
                 '    </div>\n' +
                 '  </div>');
@@ -97,9 +97,9 @@ $(document).ready(function() {
                 '        <h5 class="card-title"><strong>Author:</strong> ' + obj.author.firstname + ' ' + obj.author.lastname + '</h5>\n' +
                 '        <p class="card-text"><strong>Title:</strong> ' + obj.pollTitle +
                 '         <strong>Voted:</strong> '+ obj.votedUsers.length +'</p>\n' +
-                '        <div style="display: none;" class="row edit"><a class="btn btn-success edit" style="width: 50%;text-align: center;" href="/editPage/'+ obj.id +'" role="button">Edit</a>\n' +
+                '        <div style="display: none;" class="row edit"><a class="btn btn-secondary edit" style="width: 50%;text-align: center;" href="/editPage/'+ obj.id +'" role="button">Edit</a>\n' +
                 '        <a class="btn btn-danger edit" style="width: 50%;text-align: center;" href="/delete/'+ obj.id +'" role="button">Delete</a></div>\n' +
-                '        <div class="row"><a class="btn btn-primary" style="width: 100%;" href="/poll/'+ obj.id +'" role="button">Vote</a></div>\n' +
+                '        <div class="row"><a class="btn btn-success" style="width: 100%;" href="/poll/'+ obj.id +'" role="button">Vote</a></div>\n' +
                 '      </div>\n' +
                 '    </div>\n' +
                 '  </div>');
