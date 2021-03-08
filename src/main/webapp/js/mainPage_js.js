@@ -62,11 +62,15 @@ $(document).ready(function() {
                 '    </div>\n' +
                 '  </div>');
         })
+        var Role = $('#isAdmin').val();
+        if(Role == "ADMIN"){
+            $('.edit').css('display','flex');
+        }
     }
 
     $('#popular_btn').click(
         function(){
-            $('#popular').css('display','flex');
+            $('#popular').css('display','block');
             $('#content').css('display','none');
             $('#latest').css('display','none')
 
@@ -100,11 +104,15 @@ $(document).ready(function() {
                 '    </div>\n' +
                 '  </div>');
         })
+        var Role = $('#isAdmin').val();
+        if(Role == "ADMIN"){
+            $('.edit').css('display','flex');
+        }
     }
 
     $('#latest_btn').click(
         function(){
-            $('#latest').css('display','flex');
+            $('#latest').css('display','block');
             $('#content').css('display','none');
             $('#popular').css('display','none');
         }
