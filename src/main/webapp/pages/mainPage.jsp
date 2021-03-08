@@ -24,7 +24,7 @@
                     <a class="nav-link active" aria-current="page" href="/mainPage"><i class="bi bi-house-fill me-2"></i>Home</a>
                 </li>
                 <li class="nav-item rounded">
-                    <a class="nav-link" href="/writePoll"><i class="bi bi-people-fill me-2"></i>Write post</a>
+                    <a class="nav-link" href="/writePoll"><i class="bi bi-people-fill me-2"></i>Write poll</a>
                 </li>
                 <li class="nav-item dropdown rounded" >
                     <a id="popular_btn" class="nav-link" href="#"><i class="bi bi-telephone-fill me-2"></i>Popular Polls</a>

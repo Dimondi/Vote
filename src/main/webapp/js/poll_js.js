@@ -14,7 +14,7 @@ $(document).ready(function() {
                     alert(resultData)
                     location.reload();
                 },
-                error: function (jqXHR, textStatus, errorThrown) {alert("GG");
+                error: function (jqXHR, textStatus, errorThrown) {;
                 },
                 timeout: 120000,
             });
